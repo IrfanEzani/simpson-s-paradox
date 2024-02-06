@@ -1,0 +1,81 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# Load the readr and dplyr packages
+library(readr)
+library(dplyr)
+
+# Read datasets kidney_stone_data.csv into data
+data <- read_csv("C:/Users/User/Documents/Sandbox/simpsons-paradox/datasets/kidney_stone_data.csv")
+
+# Take a look at the first few rows of the dataset
+head(data)
+```
+
+```{r}
+# Calculate the number and frequency of success and failure of each treatment 
+data %>% 
+  group_by(treatment, success) %>%
+  summarise(N = n()) %>% 
+  mutate(Freq = round(N/sum(N), 3))
+```
+```{r}
+# Calculate number and frequency of success and failure by stone size for each treatment
+sum_data <- 
+  data %>% 
+  group_by(treatment, stone_size, success ) %>%
+  summarise(N = n()) %>%
+  mutate(Freq = round(N/sum(N),3))
+
+# Print out the data frame we just created
+print(sum_data)
+```
+```{r}
+# Load ggplot2
+library(ggplot2)
+
+# Create a bar plot to show stone size count within each treatment
+sum_data %>%
+# x-axis as "treatment" and the y-axis as "N" (the count)
+
+  ggplot(aes(x = treatment, y = N)) + 
+  geom_bar(aes(fill = stone_size), stat="identity") 
+```
+```{r}
+# Load the broom package 
+library(broom)
+
+# Run a Chi-squared test
+trt_ss <- chisq.test(data$treatment, data$stone_size)
+
+# Print out the result in tidy format 
+tidy(trt_ss)
+```
+```{r}
+# Run a multiple logistic regression
+m <- glm(data = data, data$success ~ data$treatment + data$stone_size, family = "binomial")
+
+# Print out model coefficient table in tidy format
+tidy(m)
+```
+
+```{r}
+# Save the tidy model output into an object
+tidy_m <- tidy(m)
+
+# Plot the coefficient estimates with 95% CI for each term in the model
+tidy_m %>%
+  ggplot(aes(x = term, y = estimate)) + 
+  geom_pointrange(aes(ymin = estimate - 1.96 * std.error, 
+                      ymax = estimate + 1.96 * std.error)) +
+  geom_hline(yintercept = 0)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
