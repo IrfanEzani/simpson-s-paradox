@@ -38,6 +38,17 @@ The analysis involves:
 
 Our analysis confirmed the presence of Simpson's Paradox in the dataset. While Treatment B showed a higher overall success rate, subgroup analysis revealed that Treatment A was more effective for both large and small kidney stones. This paradox highlights the critical role of stone size in determining the best treatment option and the necessity of subgroup analysis in medical research.
 
+## Insights
+The insights drawn from the analysis of the kidney stone treatment dataset can be summarized as follows:
+
+Treatment Success Rates Vary by Stone Size: The analysis showed significant differences in success rates depending on the size of the kidney stone. Small stones had higher success rates compared to large stones across treatments, which is consistent with medical expectations. The logistic regression model confirmed that stone size significantly affects treatment success, with large stones being less likely to result in a successful outcome.
+
+Comparison Between Treatments A and B: The logistic regression analysis did not find a statistically significant difference in success rates between Treatment A and Treatment B when controlling for stone size. This suggests that, overall, neither treatment has a superior effectiveness over the other across all stone sizes. However, the lack of significance could also be due to sample size, variability in the data, or other factors not accounted for in this simple model.
+
+Statistical Association Between Treatment and Stone Size: The Chi-squared test provided strong evidence of an association between the type of treatment administered and the size of the kidney stone. This might indicate that treatment decisions could be influenced by stone size or that certain treatments are preferred for specific stone sizes, which could have implications for clinical practice.
+
+Importance of Stone Size in Treatment Success: The negative coefficient for stone size in the logistic regression model highlights the importance of stone size as a predictor of treatment success. This insight is crucial for medical professionals when advising patients about the expected outcomes of their treatment options.
+
 ## Conclusions
 
 The project emphasizes the importance of careful data analysis in healthcare, particularly when making treatment decisions. It also serves as a practical example of Simpson's Paradox, illustrating how aggregated data can mask important subgroup differences. Future research should consider additional factors that may influence treatment outcomes, such as patient health status and specific treatment protocols.
