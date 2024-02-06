@@ -9,6 +9,7 @@ This project delves into a classic case study of Simpson's Paradox, a statistica
 
 Original paper: Charig CR, Webb DR, Payne SR, Wickham JE. Comparison of treatment of renal calculi by open surgery, percutaneous nephrolithotomy, and extracorporeal shockwave lithotripsy. Br Med J (Clin Res Ed). 1986 Mar 29;292(6524):879-82. doi: 10.1136/bmj.292.6524.879. 
 
+RPubs: https://rpubs.com/irfanezi/1145839
 ## Dataset
 
 The dataset comprises 700 patients who underwent treatments for kidney stones. It includes the following variables:
