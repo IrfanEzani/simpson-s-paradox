@@ -2,6 +2,9 @@
 
 ## Overview
 
+![maxresdefault (3)](https://github.com/IrfanEzani/simpson-s-paradox/assets/59435235/f59abc87-7832-4514-91c1-ade87b8b5d8d)
+
+
 This project delves into a classic case study of Simpson's Paradox, a statistical phenomenon where a trend apparent in several different groups of data disappears or reverses when these groups are combined. Utilizing a dataset from a 1986 study by a group of urologists in London, we examine the effectiveness of two kidney stone treatments: Treatment A (open surgery) and Treatment B (percutaneous nephrolithotomy). This analysis reveals how subgroup analysis can lead to different conclusions about treatment effectiveness, underscoring the importance of careful data interpretation in medical research.
 
 Original paper: Charig CR, Webb DR, Payne SR, Wickham JE. Comparison of treatment of renal calculi by open surgery, percutaneous nephrolithotomy, and extracorporeal shockwave lithotripsy. Br Med J (Clin Res Ed). 1986 Mar 29;292(6524):879-82. doi: 10.1136/bmj.292.6524.879. 
@@ -29,6 +32,9 @@ The analysis involves:
 
 ## Results
 
+<img width="460" alt="simpson-1" src="https://github.com/IrfanEzani/simpson-s-paradox/assets/59435235/0ce3c68c-c498-4d6e-bb7c-1ce1832f8ec6">
+<img width="754" alt="simpson-2" src="https://github.com/IrfanEzani/simpson-s-paradox/assets/59435235/6b495b7e-1a0b-4373-89d9-4461828b5223">
+
 Our analysis confirmed the presence of Simpson's Paradox in the dataset. While Treatment B showed a higher overall success rate, subgroup analysis revealed that Treatment A was more effective for both large and small kidney stones. This paradox highlights the critical role of stone size in determining the best treatment option and the necessity of subgroup analysis in medical research.
 
 ## Conclusions
@@ -37,4 +43,4 @@ The project emphasizes the importance of careful data analysis in healthcare, pa
 
 ## How to Run the Analysis
 
-Instructions on setting up the environment, loading the dataset, and executing the analysis scripts.
+Code runs on R.
