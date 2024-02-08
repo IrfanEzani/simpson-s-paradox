@@ -5,7 +5,7 @@
 ![maxresdefault (3)](https://github.com/IrfanEzani/simpson-s-paradox/assets/59435235/f59abc87-7832-4514-91c1-ade87b8b5d8d)
 
 
-This project delves into a classic case study of Simpson's Paradox, a statistical phenomenon where a trend apparent in several different groups of data disappears or reverses when these groups are combined. Utilizing a dataset from a 1986 study by a group of urologists in London, we examine the effectiveness of two kidney stone treatments: Treatment A (open surgery) and Treatment B (percutaneous nephrolithotomy). This analysis reveals how subgroup analysis can lead to different conclusions about treatment effectiveness, underscoring the importance of careful data interpretation in medical research.
+Project delves into a classic case study of Simpson's Paradox, a statistical phenomenon where a trend apparent in several different groups of data disappears or reverses when these groups are combined. Utilizing a dataset from a 1986 study by a group of urologists in London, we examine the effectiveness of two kidney stone treatments: Treatment A (open surgery) and Treatment B (percutaneous nephrolithotomy). This analysis reveals how subgroup analysis can lead to different conclusions about treatment effectiveness, underscoring the importance of careful data interpretation in medical research.
 
 Original paper: Charig CR, Webb DR, Payne SR, Wickham JE. Comparison of treatment of renal calculi by open surgery, percutaneous nephrolithotomy, and extracorporeal shockwave lithotripsy. Br Med J (Clin Res Ed). 1986 Mar 29;292(6524):879-82. doi: 10.1136/bmj.292.6524.879. 
 
