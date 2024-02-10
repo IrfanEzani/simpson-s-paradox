@@ -3,7 +3,7 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-```{r}
+
 # Load the readr and dplyr packages
 library(readr)
 library(dplyr)
@@ -13,16 +13,11 @@ data <- read_csv("C:/Users/User/Documents/Sandbox/simpsons-paradox/datasets/kidn
 
 # Take a look at the first few rows of the dataset
 head(data)
-```
-
-```{r}
 # Calculate the number and frequency of success and failure of each treatment 
 data %>% 
   group_by(treatment, success) %>%
   summarise(N = n()) %>% 
   mutate(Freq = round(N/sum(N), 3))
-```
-```{r}
 # Calculate number and frequency of success and failure by stone size for each treatment
 sum_data <- 
   data %>% 
@@ -32,8 +27,6 @@ sum_data <-
 
 # Print out the data frame we just created
 print(sum_data)
-```
-```{r}
 # Load ggplot2
 library(ggplot2)
 
@@ -43,8 +36,6 @@ sum_data %>%
 
   ggplot(aes(x = treatment, y = N)) + 
   geom_bar(aes(fill = stone_size), stat="identity") 
-```
-```{r}
 # Load the broom package 
 library(broom)
 
@@ -53,16 +44,11 @@ trt_ss <- chisq.test(data$treatment, data$stone_size)
 
 # Print out the result in tidy format 
 tidy(trt_ss)
-```
-```{r}
 # Run a multiple logistic regression
 m <- glm(data = data, data$success ~ data$treatment + data$stone_size, family = "binomial")
 
 # Print out model coefficient table in tidy format
 tidy(m)
-```
-
-```{r}
 # Save the tidy model output into an object
 tidy_m <- tidy(m)
 
@@ -72,4 +58,3 @@ tidy_m %>%
   geom_pointrange(aes(ymin = estimate - 1.96 * std.error, 
                       ymax = estimate + 1.96 * std.error)) +
   geom_hline(yintercept = 0)
-```
